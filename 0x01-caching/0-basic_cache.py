@@ -6,6 +6,9 @@ A class BasicCache that inherits from BaseCaching and is a caching system
 
 
 class BasicCache(BaseCaching):
+    """
+    Dict caching system
+    """
     def put(self, key, item):
         """
         Add an item to the cache.
