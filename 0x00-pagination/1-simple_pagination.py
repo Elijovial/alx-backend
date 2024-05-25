@@ -6,7 +6,8 @@ Pagination
 
 
 import csv
-import math                                       from typing import List
+import math
+from typing import List
 
 
 def index_range(page, page_size):
@@ -41,7 +42,9 @@ class Server:
         return self.__dataset
 
     def get_page(self, page: int = 1, page_size: int = 10) -> List[List]:
-        """Get a page from the dataset."""
+        """
+        Get a page from the dataset.
+        """
 
         assert isinstance(page, int) and page > 0, \
             "page must be a positive integer."
