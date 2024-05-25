@@ -1,12 +1,12 @@
 #!/usr/bin/env python3
-import csv
-import math
-from typing import List
-
 
 """
 Pagination
 """
+
+
+import csv
+import math                                       from typing import List
 
 
 def index_range(page, page_size):
