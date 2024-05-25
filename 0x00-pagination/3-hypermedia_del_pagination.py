@@ -4,8 +4,7 @@ Deletion-resilient hypermedia pagination
 """
 
 import csv
-import math
-from typing import List
+from typing import List, Dict
 
 
 class Server:
@@ -40,4 +39,24 @@ class Server:
         return self.__indexed_dataset
 
     def get_hyper_index(self, index: int = None, page_size: int = 10) -> Dict:
-        pass
+        """
+        Retrieves a specific page of data based on index.
+        """
+        assert type(index) == int
+        assert type(page_size) == int
+        csv = self.indexed_dataset()
+        csv_size = len(csv)
+        assert 0 <= index < csv_size
+        data = []
+        _next = index
+        for _ in range(page_size):
+            while not csv.get(_next):
+                _next += 1
+            data.append(csv.get(_next))
+            _next += 1
+        return {
+            "index": index,
+            "data": data,
+            "page_size": page_size,
+            "next_index": _next
+        }
