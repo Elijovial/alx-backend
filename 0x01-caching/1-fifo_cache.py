@@ -1,9 +1,11 @@
 #!/usr/bin/python3
-BaseCaching = __import__('base_caching').BaseCaching
 
 """
 FIFO cache module
 """
+
+
+BaseCaching = __import__('base_caching').BaseCaching
 
 
 class FIFOCache(BaseCaching):
