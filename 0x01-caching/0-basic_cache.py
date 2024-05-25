@@ -1,8 +1,10 @@
 #!/usr/bin/env python3
-from base_caching import BaseCaching
 """
 A class BasicCache that inherits from BaseCaching and is a caching system
 """
+
+
+BaseCaching = __import__('base_caching').BaseCaching
 
 
 class BasicCache(BaseCaching):
