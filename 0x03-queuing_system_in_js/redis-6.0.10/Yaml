@@ -1,0 +1,7 @@
+version: '3.7'
+services:
+  your_service:
+    image: your_docker_image
+    sysctls:
+      - vm.overcommit_memory=1
+
